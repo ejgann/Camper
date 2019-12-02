@@ -1,0 +1,2 @@
+class LocationItemsController < ApplicationController
+end
