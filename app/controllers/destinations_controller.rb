@@ -5,3 +5,6 @@ class DestinationsController < ApplicationController
      end
 
 end
+
+
+git remote add demo_app 'git@github.com:levelone/demo_app.git'
