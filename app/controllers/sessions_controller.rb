@@ -1,11 +1,26 @@
 class SessionsController < ApplicationController
 
+    def index
+    end
+    
     def new
-        @user = User.new
+        if sessions["username"]
+            redirect_to "/"
+        else
+            render :new
+        end
     end
 
     def create
-        session[:name] = params[:name]
-        redirect_to '/'
+        username = params[:username]
+        user = User.find_by(name: username)
+        if user 
+            sessions["username"] == user.username
+            redirect_to welcome_path
+        else
+            
+        end
     end
+
+    
 end
