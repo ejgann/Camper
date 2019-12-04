@@ -1,5 +1,16 @@
 
 <h1><%=@location.name%></h1>
-<h4> Description:</h4> <%= @location.description%>
+<h3> Description:</h3> <%= @location.description%>
+<h4> Items: </h4> 
 
-<td><%= button_to 'Add to destinations', {:controller => "destinations", :action => "create", :location_id => @location.id, :user_id => 7}, :method =>:post%> </td>
+<ul>
+<% @location.items.each do |item| %>
+<li><%= link_to item.name, item_path(item) %></li>
+<td><%= button_to 'Add to Your Stockpile', {:controller => "user_items", :action => "create", :user_id => 19, :item_id => item.id}, :method =>:post%> </td>
+<% end %>
+</ul>
+
+
+<td><%= button_to 'Add to destinations', {:controller => "destinations", :action => "create", :location_id => @location.id, :user_id => 19}, :method =>:post%> </td>
+
+<%= button_to 'View Your Items', user_items_path, method: :get %>
