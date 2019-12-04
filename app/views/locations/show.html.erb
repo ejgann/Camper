@@ -1,2 +1,5 @@
 
-<%= button_to "Create Destination", destinations_path, method: :create %>
+<h1><%=@location.name%></h1>
+<h4> Description:</h4> <%= @location.description%>
+
+<td><%= button_to 'Add to destinations', {:controller => "destinations", :action => "create", :location_id => @location.id, :user_id => 7}, :method =>:post%> </td>

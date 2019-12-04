@@ -1,7 +1,16 @@
 class LocationsController < ApplicationController
 
+    before_action :find_location, only: [:show]
+
+    def index
+        @locations = Location.all
+    end
+
     def show
-        @location = Location.find_by(params[:id])
-        
+    
+    end
+
+    def find_location
+        @location = Location.find(params[:id])
     end
 end
