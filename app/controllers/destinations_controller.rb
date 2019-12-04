@@ -5,7 +5,7 @@ class DestinationsController < ApplicationController
      end
 
      def index
-      @destination = Destination.all
+      @destinations = Destination.all
      end
 
 end
