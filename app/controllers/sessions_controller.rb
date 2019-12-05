@@ -12,12 +12,12 @@ class SessionsController < ApplicationController
     def create
        name = params[:name]
         user = User.find_by(name: name)
-        if user 
-            session[:user] = user
-            redirect_to welcome_path
+        if user && user.authenticate(params[:password]) 
+                session[:user] = user
+                redirect_to welcome_path
         else
-            flash[:error] = "No user found with that name"
-            redirect_to login_path
+                flash[:error] = "Invalid username or password, please try again"
+                redirect_to login_path
         end
     end
 

@@ -10,5 +10,11 @@
 <%= form_for @user do |u| %>
 <%= u.label :name%>
 <%= u.text_field :name%>
+<%= u.label :password%>
+<%= u.password_field :password %>
+<%= u.label :password_confirmation%>
+<%= u.password_field :password_confirmation%>
 <%= u.submit "Sign up"%>
 <%end%>
+
+<p><%= link_to "login", login_path %></p>
