@@ -1,6 +1,7 @@
 <h1>Your Items </h1>
 
 <ul>
+
 <% @user.items.each do |item| %>
 <li><%= link_to item.name, item_path(item) %></li>
 <% end %>
