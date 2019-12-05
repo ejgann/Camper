@@ -1,5 +1,7 @@
 class UserItemsController < ApplicationController
     
+    before_action :logged_in?
+    
     def index
         @user = User.find(session[:user]["id"])
     end

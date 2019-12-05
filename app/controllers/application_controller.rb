@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-    
-    helper_method: logged_in?
+
+    helper_method :logged_in?
 
     def home 
         if session[:user]
@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
-        session[:user] != nil
+        if session[:user] == nil
+            redirect_to login_path
+        end
     end
 end
