@@ -1,3 +1,8 @@
+<h1>Your handpicked Destinations</h1>
+
+
 <% @destinations.each do |destination| %>
-<li><%= destination.location.name %></li>
+<li><%= destination.name %></li>
 <% end %>
+
+<%= button_to "back to home page", welcome_path, method: :get %>
