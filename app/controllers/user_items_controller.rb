@@ -1,7 +1,7 @@
 class UserItemsController < ApplicationController
-
+    
     def index
-       @user = User.find(session[:user]["id"])
+        @user = User.find(session[:user]["id"])
     end
 
     def create
@@ -16,4 +16,5 @@ class UserItemsController < ApplicationController
             @user_item.save
         end
     end
+
 end

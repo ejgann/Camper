@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     
     def new
-        if session[:name]
+        if session[:user]
             redirect_to welcome_path
         else
             render :new
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
        name = params[:name]
         user = User.find_by(name: name)
         if user 
-            session[:name] = user.name
+            session[:user] = user
             redirect_to welcome_path
         else
             flash[:error] = "No user found with that name"
