@@ -1,11 +1,11 @@
 class UserItemsController < ApplicationController
 
     def index
-        @user = User.all[0]
+       @user = User.find(session[:user]["id"])
     end
 
     def create
-        @user_item = UserItem.new(user_id: session["Username"], item_id: params[:item_id])
+        @user_item = UserItem.new(user_id: params[:user_id], item_id: params[:item_id])
         found_match = false
          UserItem.all.each do |item| 
             if item.item_id == @user_item.item_id && item.user_id == @user_item.user_id 

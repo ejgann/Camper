@@ -6,11 +6,11 @@
 <ul>
 <% @location.items.each do |item| %>
 <li><%= link_to item.name, item_path(item) %></li>
-<td><%= button_to 'Add to Your Stockpile', {:controller => "user_items", :action => "create", :user_id => session["Username"], :item_id => item.id}, :method =>:post%> </td>
+<td><%= button_to 'Add to Your Stockpile', {:controller => "user_items", :action => "create", :user_id => session[:user]["id"], :item_id => item.id}, :method =>:post%> </td>
 <% end %>
 </ul>
 
 
-<td><%= button_to 'Add to destinations', {:controller => "destinations", :action => "create", :location_id => @location.id, :user_id => session["Username"]}, :method =>:post%> </td>
+<td><%= button_to 'Add to destinations', {:controller => "destinations", :action => "create", :location_id => @location.id, :user_id => session[:user]["id"]}, :method =>:post%> </td>
 
 <%= button_to 'View Your Items', user_items_path, method: :get %>
