@@ -33,11 +33,11 @@ backpack = Item.create(name: "Backpack", description: "A thing to help you carry
 flashlight = Item.create(name: "Flashlight", description: "Illumination")
 
 # Hawaii-specific
-machette = Item.create(name: "Machette", description: "Hawaii has vegetation. You'll need something to chop that vegetation.")
-swimsuit = Item.create(name: "Swimsuit", description: "You don't want to get arrested trying to swim without one.")
-sunblock = Item.create(name: "Sunblock", description: "Nobody likes a sunburn.")
-bug_spray = Item.create(name: "Bug Spray", description: "To keep the bugs away.")
-snorkling_gear = Item.create(name: "Snorkling Gear", description: "So you can check out the marine life.")
+machette = Item.create(name: "Machette", description: "Hawaii has vegetation. You'll need something to chop that vegetation")
+swimsuit = Item.create(name: "Swimsuit", description: "Because skinny-dipping is illegal")
+sunblock = Item.create(name: "Sunblock", description: "Protect that delicate skin")
+bug_spray = Item.create(name: "Bug Spray", description: "So bugs have to take their buffet elsewhere")
+snorkling_gear = Item.create(name: "Snorkling Gear", description: "Because there's cool stuff below the surface")
 
 # Location_Items
 hawaii_machette = LocationItem.create(item_id: machette.id, location_id: hawaii.id)
