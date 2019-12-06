@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :user_items, only: [:index, :create, :delete]
-  resources :destinations, only: [:index, :create, :show]
+  resources :user_items, only: [:index, :create, :destroy]
+  resources :destinations, only: [:index, :create, :show, :destroy]
   resources :items, only: [:index, :show]
   resources :locations, only: [:index, :show]
   resources :users

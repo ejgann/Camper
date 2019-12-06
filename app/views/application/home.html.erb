@@ -1,7 +1,43 @@
+<!DOCTYPE html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CampGuide</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  
+ <body>
+<section class="hero is-info">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://i.pinimg.com/originals/6b/49/93/6b4993482f662686caad4f205b4b268a.jpg">
+          </a>
+        </div>
+      
+      </div>
+    </nav>
+  </div>
 
-
-
-<h1>CAMPERS GUIDE FOR NON-CAMPERS</h1>
-
-<%= link_to "login", login_path %>
-<%= button_to "sign up", {:controller => "users", :action=> "new"}, :method => :get%>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        MexiCamp
+      </p>
+      <p class="subtitle">
+        Top 5 camping spots in Mexico
+      </p>
+      </div>
+     </div>
+    </nav>
+  </div>
+</section>
+</body>
+<button class="button is-outlined">
+ <%= link_to "sign up", new_user_path, :method => :get%></button>
+<button class="button is-outlined">
+  <%= link_to "login", login_path, :method => :get %>
+</button>
+</html>
