@@ -6,19 +6,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
-<h1>Login</h1>
 
 <% if flash[:error] %>
   <div class="error"><%= flash["error"]%></div>
 <%end%>
 
 
-<%= form_tag '/login' do  %>
-    <%= label_tag :name %>
-    <%= text_field_tag :name %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <%= submit_tag "Login" %>
-<%end%>
-
-<%= button_to "sign up", {:controller => "users", :action=> "new"}, :method => :get%>
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+     <h1 class="title">
+         Login
+         </h1>
+          <p><%= form_tag '/login' do  %>
+          <h2 class="subtitle">
+          <%= label_tag :name %>
+          </h2>
+          <%= text_field_tag :name %>
+          <h2 class="subtitle">
+          <%= label_tag :password %>
+          </h2>
+          <%= password_field_tag :password %>
+          <%= submit_tag "Login" %>
+      <%end%></p>
+    </div>
+    <p><button class='button is-small'>
+<%= link_to "sign up", new_user_path, :method => :get%>
+</button></p>
+  </div>
+</section>
