@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CampGuide</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
 <% if @user.errors %>
 <ul>
     <% @user.errors.full_messages.each do |error| %>
@@ -5,16 +13,19 @@
        </ul>
        <%end%>
 <%end%>
-
-
+ 
 <%= form_for @user do |u| %>
+<div class="tile is-child box">
 <%= u.label :name%>
+</button>
 <%= u.text_field :name%>
-<%= u.label :password%>
-<%= u.password_field :password %>
+<p><%= u.label :password%>
+<%= u.password_field :password %></p>
 <%= u.label :password_confirmation%>
 <%= u.password_field :password_confirmation%>
 <%= u.submit "Sign up"%>
 <%end%>
 
+<p><button class="button">
 <p><%= link_to "login", login_path %></p>
+</button></p>

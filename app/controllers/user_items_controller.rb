@@ -3,7 +3,7 @@ class UserItemsController < ApplicationController
     before_action :logged_in?
     
     def index
-        @user = User.find(session[:user]["id"])
+        @user_items = User.find(session[:user]["id"]).user_items
     end
 
     def create
@@ -17,6 +17,12 @@ class UserItemsController < ApplicationController
         if !found_match
             @user_item.save
         end
+    end
+
+    def destroy
+        user_item = UserItem.find(params[:id])
+        user_item.delete
+        redirect_to user_items_path
     end
 
 end
