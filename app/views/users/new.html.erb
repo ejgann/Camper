@@ -14,10 +14,14 @@
        <%end%>
 <%end%>
  
-<%= form_for @user do |u| %>
+
+ 
+<section class="hero is-primary is-medium">
+  <div class="hero-body"  >
+    <div class="container">
+     <%= form_for @user do |u| %>
 <div class="tile is-child box">
-<%= u.label :name%>
-</button>
+<%= u.label :name %>
 <%= u.text_field :name%>
 <p><%= u.label :password%>
 <%= u.password_field :password %></p>
@@ -26,6 +30,12 @@
 <%= u.submit "Sign up"%>
 <%end%>
 
-<p><button class="button">
+<p><button class="button is-small">
 <p><%= link_to "login", login_path %></p>
 </button></p>
+</div>
+ 
+    </div>
+  </div>
+</section>
+

@@ -8,8 +8,15 @@
   </head>
 
 <h1>WELCOME TO MEXICAMP!</h1>
-<ul>
-<li><%= link_to "See our list of the top 5 camping locations in Mexico", locations_path %></li>
-<li><%= link_to "Check out the most popular camping items", items_path %></li>
-</ul>
+
+
+
+
+
+<div class="columns is-mobile">
+  <div class="column"><%= link_to "Check out the most popular camping items", items_path %></div>
+  <div class="column"><%= link_to "See our list of the top 5 camping locations in Mexico", locations_path %></div>
+</div>
+
+
 <%= link_to "Log out", logout_path, method: :post %>

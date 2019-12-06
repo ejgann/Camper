@@ -26,7 +26,6 @@ malikualli                = Location.create(name: "Malikualli", experience_level
 # ITEMS
 
 # General items
-sleeping_bag             = Item.create(name: "Sleeping Bag", description: "A bag in which to sleep")
 tent                     = Item.create(name: "Tent", description: "A place in which to lay your sleeping bag")
 backpack                 = Item.create(name: "Backpack", description: "A thing to help you carry your stuff")
 flashlight               = Item.create(name: "Flashlight", description: "Illumination")
